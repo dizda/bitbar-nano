@@ -36,7 +36,7 @@ print ('sell: %.8f | color=red'% float(result_kucoin['data']['sell']))
 
 print '---'
 print ('vol: %.0f BTC | color=#000000'% float(result_cmc[0]['24h_volume_btc']))
-print ('change 24h: %.1f%% | color=#000000'% float(result_cmc[0]['percent_change_24h']))
+print ('change-24h: %.1f%% | color=#000000'% float(result_cmc[0]['percent_change_24h']))
 print '---'
 
 print ('high:   %.8f | color=#000000'% float(result_kucoin['data']['high']))
