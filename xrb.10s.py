@@ -5,14 +5,14 @@
 # <bitbar.version>v1.1</bitbar.version>
 # <bitbar.author>dizda</bitbar.author>
 # <bitbar.author.github>dizda</bitbar.author.github>
-# <bitbar.desc>Displays current RaiBlocks stats from BitGrail and CMC</bitbar.desc>
+# <bitbar.desc>Displays current RaiBlocks stats from KuCoin and CMC</bitbar.desc>
 #
 # by dizda
 
 import urllib2
 #req_bitgrail = urllib2.Request('https://bitgrail.com/api/v1/BTC-XRB/ticker', headers={ 'User-Agent': 'Mozilla/5.0' })
 req_kucoin = urllib2.Request('https://api.kucoin.com/v1/open/tick?symbol=XRB-BTC', headers={ 'User-Agent': 'Mozilla/5.0' })
-req_cmc = urllib2.Request('https://api.coinmarketcap.com/v1/ticker/raiblocks/?convert=BTC', headers={ 'User-Agent': 'Mozilla/5.0' })
+req_cmc = urllib2.Request('https://api.coinmarketcap.com/v1/ticker/nano/?convert=BTC', headers={ 'User-Agent': 'Mozilla/5.0' })
 kucoin = urllib2.urlopen(req_kucoin).read()
 cmc = urllib2.urlopen(req_cmc).read()
 
