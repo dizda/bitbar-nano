@@ -46,6 +46,6 @@ print ('rank:   #%.0f | color=#000000'% float(result_cmc[0]['rank']))
 
 print '---'
 
-print 'Show CoinMarketCap | color=#123def href=https://coinmarketcap.com/currencies/raiblocks/'
+print 'Show CoinMarketCap | color=#123def href=https://coinmarketcap.com/currencies/nano/'
 print 'Show KuCoin | color=purple href=https://www.kucoin.com/#/trade.pro/XRB-BTC'
 print 'Show Binance | color=#ff9933 href=https://www.binance.com/tradeDetail.html?symbol=NANO_BTC'
