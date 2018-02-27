@@ -10,6 +10,9 @@
 # by dizda
 
 import urllib2
+import locale
+locale.setlocale(locale.LC_ALL, 'en_US')
+
 #req_bitgrail = urllib2.Request('https://bitgrail.com/api/v1/BTC-XRB/ticker', headers={ 'User-Agent': 'Mozilla/5.0' })
 req_binance = urllib2.Request('https://api.binance.com/api/v1/ticker/24hr?symbol=NANOBTC', headers={ 'User-Agent': 'Mozilla/5.0' })
 req_cmc = urllib2.Request('https://api.coinmarketcap.com/v1/ticker/nano/?convert=BTC', headers={ 'User-Agent': 'Mozilla/5.0' })
@@ -35,7 +38,7 @@ print ('buy: %.8f | color=blue'% float(result_binance['bidPrice']))
 print ('sell: %.8f | color=red'% float(result_binance['askPrice']))
 
 print '---'
-print ('vol: %.0f BTC | color=#000000'% float(result_cmc[0]['24h_volume_btc']))
+print ('vol: %.0f BTC (%s) | color=#000000'% (float(result_cmc[0]['24h_volume_btc']), locale.currency(float(result_cmc[0]['24h_volume_usd']), grouping=True)))
 print ('change-24h: %.1f%% | color=#000000'% float(result_cmc[0]['percent_change_24h']))
 print '---'
 
