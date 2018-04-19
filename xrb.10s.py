@@ -1,11 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # coding=utf-8
 #
-# <bitbar.title>RaiBlocks coin Ticker</bitbar.title>
+# <bitbar.title>NANO coin Ticker</bitbar.title>
 # <bitbar.version>v1.1</bitbar.version>
 # <bitbar.author>dizda</bitbar.author>
 # <bitbar.author.github>dizda</bitbar.author.github>
-# <bitbar.desc>Displays current RaiBlocks stats from KuCoin and CMC</bitbar.desc>
+# <bitbar.desc>Displays current NANO stats from Binance and CMC</bitbar.desc>
 #
 # by dizda
 
@@ -13,14 +13,13 @@ import urllib2
 import locale
 locale.setlocale(locale.LC_ALL, 'en_US')
 
-#req_bitgrail = urllib2.Request('https://bitgrail.com/api/v1/BTC-XRB/ticker', headers={ 'User-Agent': 'Mozilla/5.0' })
 req_binance = urllib2.Request('https://api.binance.com/api/v1/ticker/24hr?symbol=NANOBTC', headers={ 'User-Agent': 'Mozilla/5.0' })
 req_cmc = urllib2.Request('https://api.coinmarketcap.com/v1/ticker/nano/?convert=BTC', headers={ 'User-Agent': 'Mozilla/5.0' })
-kucoin = urllib2.urlopen(req_binance).read()
+binance = urllib2.urlopen(req_binance).read()
 cmc = urllib2.urlopen(req_cmc).read()
 
 import json
-result_binance = json.loads(kucoin)
+result_binance = json.loads(binance)
 result_cmc = json.loads(cmc)
 
 def flow():
