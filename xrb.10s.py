@@ -36,13 +36,13 @@ flow()
 
 print '---'
 
-print ('buy: %.8f | color=blue'% float(result_binance['bidPrice']))
+print ('NANO')
+
+print ('buy: %.8f | color=green'% float(result_binance['bidPrice']))
 print ('sell: %.8f | color=red'% float(result_binance['askPrice']))
 
-print '---'
 print ('vol: %.0f BTC (%s) | color=#000000'% (float(result_cmc_nano[0]['24h_volume_btc']), locale.currency(float(result_cmc_nano[0]['24h_volume_usd']), grouping=True)))
 print ('change-24h: %.1f%% | color=#000000'% float(result_cmc_nano[0]['percent_change_24h']))
-print '---'
 
 high_usd = float(result_cmc_btc[0]['price_usd']) * float(result_binance['highPrice'])
 low_usd = float(result_cmc_btc[0]['price_usd']) * float(result_binance['lowPrice'])
@@ -54,6 +54,9 @@ print ('low:    %.8f (%s) | color=#000000'% (float(result_binance['lowPrice']), 
 print ('price:  $%.2f | color=#000000'% float(result_cmc_nano[0]['price_usd']))
 print ('rank:   #%.0f | color=#000000'% float(result_cmc_nano[0]['rank']))
 
+print '---'
+print ('NANO daily-trading')
+
 spread24hBTC = float(result_binance['highPrice']) - float(result_binance['lowPrice'])
 spread24hUSD = spread24hBTC * float(result_cmc_btc[0]['price_usd'])
 # gain if we swingtrade with 50k NANO
@@ -64,10 +67,12 @@ print ('possible gain:   %.2f BTC (%s) | color=#000000'% (possible_gain, locale.
 
 print '---'
 
-print ('Bitcoin price:  $%.2f | color=#000000'% float(result_cmc_btc[0]['price_usd']))
-print ('Bitcoin change 1h: %.1f%% | color=#000000'% float(result_cmc_btc[0]['percent_change_1h']))
-print ('Bitcoin change 24h: %.1f%% | color=#000000'% float(result_cmc_btc[0]['percent_change_24h']))
-print ('Bitcoin change 7d: %.1f%% | color=#000000'% float(result_cmc_btc[0]['percent_change_7d']))
+print ('Bitcoin')
+
+print ('price:  $%.2f | color=#000000'% float(result_cmc_btc[0]['price_usd']))
+print ('change 1h: %.1f%% | color=#000000'% float(result_cmc_btc[0]['percent_change_1h']))
+print ('change 24h: %.1f%% | color=#000000'% float(result_cmc_btc[0]['percent_change_24h']))
+print ('change 7d: %.1f%% | color=#000000'% float(result_cmc_btc[0]['percent_change_7d']))
 
 print '---'
 
