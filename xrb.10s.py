@@ -44,8 +44,11 @@ print ('vol: %.0f BTC (%s) | color=#000000'% (float(result_cmc_nano[0]['24h_volu
 print ('change-24h: %.1f%% | color=#000000'% float(result_cmc_nano[0]['percent_change_24h']))
 print '---'
 
-print ('high:   %.8f | color=#000000'% float(result_binance['highPrice']))
-print ('low:    %.8f | color=#000000'% float(result_binance['lowPrice']))
+high_usd = float(result_cmc_btc[0]['price_usd']) * float(result_binance['highPrice'])
+low_usd = float(result_cmc_btc[0]['price_usd']) * float(result_binance['lowPrice'])
+
+print ('high:   %.8f (%s) | color=#000000'% (float(result_binance['highPrice']), locale.currency(high_usd, grouping=True)))
+print ('low:    %.8f (%s) | color=#000000'% (float(result_binance['lowPrice']), locale.currency(low_usd, grouping=True)))
 
 
 print ('price:  $%.2f | color=#000000'% float(result_cmc_nano[0]['price_usd']))
